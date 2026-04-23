@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Practica CRUD | Eventos DOM + localStorage</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Urbanist:wght@400;500;700;800&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+	<main class="app" id="app">
+		<section class="hero">
+			<div class="hero-icons" aria-hidden="true">
+				<i class="fa-solid fa-address-book"></i>
+				<i class="fa-solid fa-user-group"></i>
+				<i class="fa-solid fa-phone"></i>
+			</div>
+			<h1>Lista de contactos</h1>
+			<p>Practica CRUD | Eventos DOM + localStorage</p>
+		</section>
+
+		<section class="content">
+			<article class="card">
+				<form id="contactForm" novalidate>
+					<div class="form-grid">
+						<div>
+							<label for="name">Nombre</label>
+							<input type="text" id="name" name="name" placeholder="Ingresa tu nombre" />
+						</div>
+
+						<div>
+							<label for="lastname">Apellido</label>
+							<input type="text" id="lastname" name="lastname" placeholder="Ingresa tu apellido" />
+						</div>
+
+						<div>
+							<label for="phone">Telefono</label>
+							<input type="tel" id="phone" name="phone" placeholder="Ingresa tu telefono" />
+						</div>
+
+						<div>
+							<label for="city">Ciudad</label>
+							<input type="text" id="city" name="city" placeholder="Ingresa tu ciudad" />
+						</div>
+
+						<div class="full">
+							<label for="address">Direccion</label>
+							<input type="text" id="address" name="address" placeholder="Ingresa tu direccion" />
+						</div>
+
+						<div class="full">
+							<label>Genero</label>
+							<div class="gender" role="radiogroup" aria-label="Selecciona genero">
+								<label class="gender-option" for="female">
+									<input type="radio" id="female" name="gender" value="female" />
+									<i class="fa-solid fa-venus"></i>
+									Femenino
+								</label>
+
+								<label class="gender-option" for="male">
+									<input type="radio" id="male" name="gender" value="male" />
+									<i class="fa-solid fa-mars"></i>
+									Masculino
+								</label>
+							</div>
+						</div>
+					</div>
+
+					<div class="actions">
+						<button class="btn-primary" type="submit" id="saveBtn">Agregar contacto</button>
+						<button class="btn-secondary" type="button" id="clearBtn">Limpiar</button>
+					</div>
+					<p id="status" class="status" aria-live="polite"></p>
+				</form>
+			</article>
+
+			<article class="card">
+				<div class="list-head">
+					<h2>Lista de contactos</h2>
+					<span class="badge" id="counter">0 registros</span>
+				</div>
+				<ul class="contacts" id="contactList"></ul>
+			</article>
+		</section>
+
+		<div class="loading" id="loading" aria-live="polite" aria-label="Cargando">
+			<div class="spinner-box">
+				<span class="spinner"></span>
+				Cargando...
+			</div>
+		</div>
+	</main>
+
+	<script src="assets/js/app.js"></script>
+</body>
+</html>
