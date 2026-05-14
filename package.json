@@ -1,0 +1,27 @@
+{
+  "name": "ejercicios",
+  "version": "1.0.0",
+  "description": "CRUD de contactos con frontend y API Express",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "echo \"No tests configured\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juanpablou22/Actividad-ListaContactos.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/juanpablou22/Actividad-ListaContactos/issues"
+  },
+  "homepage": "https://github.com/juanpablou22/Actividad-ListaContactos#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  }
+}
