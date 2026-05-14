@@ -29,26 +29,31 @@
 						<div>
 							<label for="name">Nombre</label>
 							<input type="text" id="name" name="name" placeholder="Ingresa tu nombre" />
+							<div class="field-error" data-for="name" aria-live="polite"></div>
 						</div>
 
 						<div>
 							<label for="lastname">Apellido</label>
 							<input type="text" id="lastname" name="lastname" placeholder="Ingresa tu apellido" />
+							<div class="field-error" data-for="lastname" aria-live="polite"></div>
 						</div>
 
 						<div>
 							<label for="phone">Telefono</label>
 							<input type="tel" id="phone" name="phone" placeholder="Ingresa tu telefono" />
+							<div class="field-error" data-for="phone" aria-live="polite"></div>
 						</div>
 
 						<div>
 							<label for="city">Ciudad</label>
 							<input type="text" id="city" name="city" placeholder="Ingresa tu ciudad" />
+							<div class="field-error" data-for="city" aria-live="polite"></div>
 						</div>
 
 						<div class="full">
 							<label for="address">Direccion</label>
 							<input type="text" id="address" name="address" placeholder="Ingresa tu direccion" />
+							<div class="field-error" data-for="address" aria-live="polite"></div>
 						</div>
 
 						<div class="full">
@@ -71,6 +76,7 @@
 
 					<div class="actions">
 						<button class="btn-primary" type="submit" id="saveBtn">Agregar contacto</button>
+						<button class="btn-secondary" type="button" id="cancelBtn">Cancelar</button>
 						<button class="btn-secondary" type="button" id="clearBtn">Limpiar</button>
 					</div>
 					<p id="status" class="status" aria-live="polite"></p>
@@ -79,8 +85,11 @@
 
 			<article class="card">
 				<div class="list-head">
-					<h2>Lista de contactos</h2>
-					<span class="badge" id="counter">0 registros</span>
+				  <h2>Lista de contactos</h2>
+				  <div style="display:flex;gap:10px;align-items:center"> 
+				    <input id="search" type="search" placeholder="Buscar por nombre o ciudad" aria-label="Buscar contactos" style="padding:8px 10px;border-radius:8px;border:1px solid var(--line);min-width:180px" />
+				    <span class="badge" id="counter">0 registros</span>
+				  </div>
 				</div>
 				<ul class="contacts" id="contactList"></ul>
 			</article>
@@ -93,6 +102,17 @@
 			</div>
 		</div>
 	</main>
+
+	<!-- Confirm modal -->
+	<div id="confirmModal" class="confirm-modal" role="dialog" aria-modal="true" aria-hidden="true">
+		<div class="confirm-box" role="document">
+			<p id="confirmMsg">¿Estás seguro?</p>
+			<div style="display:flex;gap:10px;margin-top:12px;justify-content:flex-end">
+				<button id="confirmNo" class="btn-secondary" type="button">Cancelar</button>
+				<button id="confirmYes" class="btn-primary" type="button">Eliminar</button>
+			</div>
+		</div>
+	</div>
 
 	<script src="assets/js/app.js"></script>
 </body>

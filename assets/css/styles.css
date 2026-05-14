@@ -385,3 +385,41 @@ button:hover {
 		align-items: flex-start;
 	}
 }
+
+/* inline field errors */
+.field-error {
+	color: var(--danger);
+	font-size: 0.86rem;
+	margin-top: 6px;
+	min-height: 18px;
+}
+
+/* confirm modal */
+.confirm-modal {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	background: rgba(31,34,48,0.35);
+	z-index: 60;
+}
+.confirm-modal[aria-hidden="false"] {
+	display: flex;
+}
+.confirm-box {
+	background: white;
+	padding: 18px;
+	border-radius: 12px;
+	box-shadow: 0 12px 40px rgba(31,34,48,0.25);
+	max-width: 420px;
+	width: calc(100% - 40px);
+}
+
+.btn-secondary[disabled] {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
